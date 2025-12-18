@@ -10,4 +10,5 @@ class JavagramApplicationTests {
     void contextLoads() {
         // sanity check, nothing to test yet
     }
+
 }

@@ -1,20 +1,14 @@
 
 services:
   app:
-    build: .
+    image: javagram-dev
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
     ports:
       - "8080:8080"
-    environment:
-      - SPRING_PROFILES_ACTIVE=dev
-      - REDIS_HOST=redis
-      - REDIS_PORT=6379
     volumes:
       - .:/app
       - /app/target
-    depends_on:
-      - redis
-
-  redis:
-    image: redis:8.4-alpine
-    ports:
-      - "6379:6379"
+    environment:
+      SPRING_PROFILES_ACTIVE: dev

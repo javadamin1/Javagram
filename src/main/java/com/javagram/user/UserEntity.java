@@ -5,9 +5,9 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "users",
-    uniqueConstraints = @UniqueConstraint(
-            columnNames = {"external_user_id", "provider"}
-))
+        uniqueConstraints = @UniqueConstraint(
+                columnNames = {"external_user_id", "provider"}
+        ))
 public class UserEntity {
 
     @Id
@@ -24,18 +24,16 @@ public class UserEntity {
     @Column(length = 100)
     private String username;
 
-    @Column(nullable = false)
-    private String name;
 
-    protected UserEntity() {}
+    protected UserEntity() {
+    }
 
-    public UserEntity(Long externalUserId, String name, Provider provider, String username) {
+    public UserEntity(Long externalUserId, Provider provider, String username) {
         this.externalUserId = externalUserId;
-        this.name = name;
+
         this.provider = provider != null ? provider : Provider.LARAVEL;
         this.username = username;
     }
-
 
 
 }

@@ -1,7 +1,10 @@
 spring:
   application:
     name: Javagram
-
+  logging:
+    level:
+      org.hibernate.SQL: DEBUG
+      org.hibernate.orm.jdbc.bind: TRACE
   datasource:
     url: jdbc:postgresql://db:5432/javagram
     username: chat_user

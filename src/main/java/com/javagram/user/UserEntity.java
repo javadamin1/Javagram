@@ -34,6 +34,20 @@ public class UserEntity {
         this.provider = provider != null ? provider : Provider.LARAVEL;
         this.username = username;
     }
+    public Long getId() {
+        return id;
+    }
 
+    public Long getExternalUserId() {
+        return externalUserId;
+    }
+
+    public Provider getProvider() {
+        return provider;
+    }
+
+    public String getUsername() {
+        return username;
+    }
 
 }
